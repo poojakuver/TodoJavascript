@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const inputBox = document.getElementById("input-box");
     const listContainer = document.getElementById("list-container");
 
-    function addTask() {
+    window.addTask = function addTask() {
         if (inputBox.value === '') {
             alert("You must write something!");
         } else {
@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         inputBox.value = "";
         saveData();
-    }
+    };
 
     listContainer.addEventListener("click", function(e) {
         if (e.target.tagName === "LI") {
@@ -36,7 +36,4 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     showTask();
-
-    // Expose addTask to global scope
-    window.addTask = addTask;
 });
